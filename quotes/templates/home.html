@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+			<table class="table table-bordered">
+		<thead>
+		<tr>
+		<th scope="col">#</th>
+		<th scope="col">Name of Stock</th>
+		<th scope="col">NSE BID</th>
+		<th scope="col">BSE BID</th>
+		<th scope="col">NSE ASK</th>
+		<th scope="col">BSE ASK</th>
+		<th scope="col">Price DIfference</th>
+		<th scope="col">Final Profit</th>
+		</tr>
+		</thead>
+		<tbody>
+
+{% for key,value in api.items %}
+<tr>
+	<th scope="row">{{ key }}</th>
+	{% for Key,Value in value.items %} 
+		<td>{{ Value }}</td>
+
+	{% endfor %}
+</tr>
+
+{% endfor %}
+		</tbody>
+		</table>
+
+
+
+{%  endblock %}
+			
